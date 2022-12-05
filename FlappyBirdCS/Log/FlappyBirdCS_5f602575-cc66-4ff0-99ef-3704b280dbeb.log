@@ -1,0 +1,31 @@
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:22.674| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:26.971| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:26.974| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:27.162| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:28.159| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:29.013| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:29.068| FlappyBirdCS.ManagerUser.load | Load User Data
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:29.076| FlappyBirdCS.Form3.pictureBox8_Click | Apro manager user
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:30.466| FlappyBirdCS.ManagerUser.showData | Load All User
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:32.948| FlappyBirdCS.ManagerUser.buttons3_Click | Close Manager User
+ INFORMATION: |W10P-N4418|2020/09/28 14:05:34.170| FlappyBirdCS.Form3.buttons4_Click | Apro form per registrazione
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:02.949| FlappyBirdCS.Registration.buttons1_Click | Password must be at least 8 characters long
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:08.617| FlappyBirdCS.Registration.buttons1_Click | User inser corrected
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:10.247| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:17.389| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:17.391| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:17.397| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:19.365| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ ERROR :      |W10P-N4418|2020/09/28 14:06:20.546| FlappyBirdCS.Form3.pictureBox8_Click | Errore : Nessun privilegio admin
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:21.522| FlappyBirdCS.RecordTable.showData | Show All User 
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:21.531| FlappyBirdCS.Form3.buttons5_Click | Apro form per tabella dei record
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:23.917| FlappyBirdCS.Form3.buttons3_Click | Apro form web
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:29.676| FlappyBirdCS.Form3.muteAudio | Muto l'audio
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:30.196| FlappyBirdCS.Form3.unMuteAudio | Riattivo l'audio
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:30.561| FlappyBirdCS.Form3.pictureBox9_Click | Apro menu
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:31.434| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:31.950| FlappyBirdCS.Form3.muteAudio | Muto l'audio
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:33.033| FlappyBirdCS.Form3.buttons1_Click | Apro form 1 per iniziare il gioco
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:46.951| FlappyBirdCS.Form1.endGame | Game Over
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:48.353| FlappyBirdCS.Form1.mexRecord | New Record
+ INFORMATION: |W10P-N4418|2020/09/28 14:06:51.376| FlappyBirdCS.Form1.mexRetryYN | Restart

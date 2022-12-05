@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define FlappyBirdCS_TargetDir=$(var.FlappyBirdCS.TargetDir)?>
+	<Product Id="2671ed04-e4e0-4f53-8dbb-f342e27b9d86" Name="FlappyBirdCS" Language="1033" Version="2.1.1.0" Manufacturer="Salvucci Franco" UpgradeCode="3bac7603-d975-414b-a065-a5014859f26b">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Icon Id="Icon" SourceFile="$(var.ProjectDir)\Images\icon.ico" />
+    <Property Id="ARPPRODUCTION" Value="icon.ico" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="Images\top.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Images\background.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\License\License.rtf" />
+    
+    <Property Id="WIXUI_INSTALLDIR" Value="TESTFILEPRODUCTDIR" />
+    <!--<Property Id="CANCELEDPROP" Secure="yes">0</Property>-->
+    <!-- Step 2: Add UI to your installer / Step 4: Trigger the custom action -->
+    <UIRef Id="MyWixUI_InstallDir" />
+    <UI>
+				<!--<UIRef Id="CustomWixUI_InstallDir" />-->
+        <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    <!--<Publish Dialog="ExitDialog" 
+            Control="Finish" 
+            Event="EndDialog" 
+            Value="ShowMsg">WIXUI_EXITDIALOGMSG</Publish>-->
+      
+    </UI>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch FlappyBirdCS" />
+		<!--Custom Checkbox shorcut-->
+    <Property Id="INSTALLDESKTOPSHORTCUT" Value="1" />
+    <!--<Property Id="INSTALLWINSERVICE" Value="1" />-->
+    
+    <!--TEST-->
+    <!--<CustomAction Id="caSetup" BinaryKey="CustomAction.CA.dll" DllEntry="CAProgress" Execute="immediate"/>
+    <CustomAction Id="caGo" BinaryKey="CustomAction.CA.dll" DllEntry="CAProgress" Execute="deferred"/>
+
+    <InstallExecuteSequence>
+      <Custom Action="caSetup" Before="InstallFinalize">NOT Installed</Custom>
+      <Custom Action="caGo" After="caSetup">NOT Installed</Custom>
+    </InstallExecuteSequence>-->
+    
+    <!--<Property Id="WIXUI_EXITDIALOGMSG" Value="FlappyBirdCS was successfully installed" />-->
+    <!-- Step 3: Include the custom action -->
+   <Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]FlappyBirdCS.exe" />
+    
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+    
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="FlappyBirdCS" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="ApplicationShortcutDesktop" />
+      <ComponentRef Id="ApplicationShortcutUnistall" />
+      <ComponentGroupRef Id="DirectoryMusic" />
+      <ComponentGroupRef Id="DirectoryButtons" />
+      <ComponentGroupRef Id="DirectoryManager" />
+      <ComponentGroupRef Id="DirectoryImg" />
+      <ComponentGroupRef Id="DirectoryDll" />
+      <ComponentGroupRef Id="DirectoryLog" />
+      <ComponentGroupRef Id="DirectoryResource" />
+      <ComponentRef Id="img" />
+      <ComponentRef Id="Music" />
+      <ComponentRef Id="Manager" />
+      <ComponentRef Id="Buttons" />
+      <ComponentRef Id="dll" />
+      <ComponentRef Id="log" />
+      <ComponentRef Id="ris" />
+			<!--<ComponentRef Id="ProgramFilesShortcut" />-->
+			<!--<ComponentGroupRef Id="img_files" />-->
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="TESTFILEPRODUCTDIR" Name="Salvucci Franco">
+					<Directory Id="INSTALLFOLDER" Name="FlappyBirdCS">
+					  <Directory Id="img" Name="Images" />
+            <Directory Id="Music" Name="Sound" />
+            <Directory Id="Manager" Name="Manager" />
+            <Directory Id="Buttons" Name="Buttons" />    
+            <Directory Id="dll" Name="DLL" />
+            <Directory Id="log" Name="Log" />
+            <Directory Id="ris" Name="Properties" />
+					</Directory>
+        </Directory>
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="FlappyBirdCS" />
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+      
+		</Directory>
+	</Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="0D4498B6-0055-479A-84E9-CB2DAE554AB2">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="FlappyBirdCS" Description="A simple FlappyBirdCS game" Target="[INSTALLFOLDER]FlappyBirdCS.exe" WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\FlappyBirdCS" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="4035864A-8A62-480C-8AF5-F49186BB2A41">
+        <Condition>INSTALLDESKTOPSHORTCUT</Condition>
+        <Shortcut Id="ApplicationShortcutDesktop" Directory="DesktopFolder" Name="FlappyBirdCS" Description="A simple FlappyBirdCS game" Target="[INSTALLFOLDER]FlappyBirdCS.exe" />
+        <RemoveFolder Id="RemoveDesktopFolderShortcut" On="uninstall" />
+        <RegistryKey Root="HKCU" Key="Software\FlappyBirdCS" Action="createAndRemoveOnUninstall">
+						<RegistryValue Name="installed" Type="integer" Value="1" KeyPath="yes" />
+        </RegistryKey>
+      </Component>   
+    </DirectoryRef>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="ApplicationShortcutUnistall" Guid="C6EBBAE3-5399-45C2-A54E-D687C34B9BF5">
+        <Shortcut Id="UninstallProduct" Name="Uninstall" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Description="Uninstalls My Application" WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+        <RemoveFolder Id="RemoveApplication" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\FlappyBirdCS" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+      <!--Directory-->
+      <Component Id="img" Guid="F9FA69D5-7FDF-4F09-A9E6-513EF98A3B57">
+        <CreateFolder />
+        
+            </Component>
+      <Component Id="dll" Guid="{2C7F2D5E-EFFF-48C1-8879-B157D25C179F}">
+        <CreateFolder />
+      </Component>
+      <Component Id="log" Guid="{AADA1A85-0E5E-4097-94FC-9F1196078074}">
+        <CreateFolder />
+      </Component>
+      <Component Id="ris" Guid="{83130B2E-1040-4CD2-9FB6-3877D4D9A02F}">
+        <CreateFolder />
+      </Component>
+      <Component Id="Music" Guid="EECF1CFD-5F71-4F74-B19E-F919CD853A82">
+        <CreateFolder />
+            </Component>
+      <Component Id="Manager" Guid="B2D79E84-4DEA-4C57-B636-0962C65B80BD">
+        <CreateFolder />
+            </Component>
+      <Component Id="Buttons" Guid="F01D775A-EAE2-4FF8-8299-D48E37BAD463">      
+        <CreateFolder />
+            </Component>
+      
+      <!--/Directory-->
+      
+    </DirectoryRef>
+    
+  </Fragment>
+	
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<!--<Component Id="Icon_removebg_preview.ico" Guid="20d58d36-0760-445d-9c2c-09172d95874a">
+			  <File Id="Icon_removebg_preview.ico" Name="Icon-removebg-preview.ico" Source="C:\Users\FSalvucci\source\repos\FlappyBirdCS\FlappyBirdCS\img\Icon-removebg-preview.ico" />
+			</Component>-->
+			<Component Id="FlappyBirdCS.exe" Guid="50785472-2c6e-4a8c-9e2f-fbd39707c8e7">
+			  <File Id="FlappyBirdCS.exe" Name="FlappyBirdCS.exe" Source="$(var.FlappyBirdCS_TargetDir)FlappyBirdCS.exe" />
+			</Component>
+			<Component Id="FlappyBirdCS.exe.config" Guid="ae104a16-ac0a-4422-892b-17b0c8d648e2">
+			  <File Id="FlappyBirdCS.exe.config" Name="FlappyBirdCS.exe.config" Source="$(var.FlappyBirdCS_TargetDir)FlappyBirdCS.exe.config" />
+			</Component>
+      <Component Id="packages.config" Guid="{315487D1-561E-45FB-A8E5-54A4112A48EB}">
+        <File Id="packages.config" Name="packages.config" Source="$(var.FlappyBirdCS_TargetDir)packages.config" />
+      </Component>
+			
+			<Component Id="FlappyBirdCS.pdb" Guid="26be1748-f04e-4976-b366-e6c63e506fa3">
+			  <File Id="FlappyBirdCS.pdb" Name="FlappyBirdCS.pdb" Source="$(var.FlappyBirdCS_TargetDir)FlappyBirdCS.pdb" />
+			</Component>
+
+      <Component Id="log4net.dll" Guid="ab8ea66a-bc33-4e11-b785-00cf99b4ae94">
+        <File Id="log4net.dll" Name="log4net.dll" Source="$(var.FlappyBirdCS_TargetDir)log4net.dll" />
+      </Component>
+      <Component Id="MySql.Data.dll" Guid="09ce2321-f164-4c69-b231-24f47ffa4d2b">
+        <File Id="MySql.Data.dll" Name="MySql.Data.dll" Source="$(var.FlappyBirdCS_TargetDir)MySql.Data.dll" />
+      </Component>
+      <Component Id="Newtonsoft.Json.dll" Guid="cbd9757d-0aa9-4b20-96bf-482cec7248df">
+        <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.FlappyBirdCS_TargetDir)Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="Google.Protobuf.dll" Guid="20e5dc54-ba4e-41d3-84b0-0546a6d839b9">
+        <File Id="Google.Protobuf.dll" Name="Google.Protobuf.dll" Source="$(var.FlappyBirdCS_TargetDir)Google.Protobuf.dll" />
+      </Component>
+      <Component Id="Zstandard.Net.dll" Guid="2cf945ab-b1f0-4444-8801-35603244d88f">
+        <File Id="Zstandard.Net.dll" Name="Zstandard.Net.dll" Source="$(var.FlappyBirdCS_TargetDir)Zstandard.Net.dll" />
+      </Component>
+      <Component Id="K4os.Compression.LZ4.Streams.dll" Guid="e24989af-55b7-41de-aaf7-fc23404eaffe">
+        <File Id="K4os.Compression.LZ4.Streams.dll" Name="K4os.Compression.LZ4.Streams.dll" Source="$(var.FlappyBirdCS_TargetDir)K4os.Compression.LZ4.Streams.dll" />
+      </Component>
+      <Component Id="System.Buffers.dll" Guid="6d3dda0c-aff5-4617-b4d8-87356faf138b">
+        <File Id="System.Buffers.dll" Name="System.Buffers.dll" Source="$(var.FlappyBirdCS_TargetDir)System.Buffers.dll" />
+      </Component>
+      <Component Id="K4os.Compression.LZ4.dll" Guid="f021aa60-fde0-4640-b642-add5b4012d8d">
+        <File Id="K4os.Compression.LZ4.dll" Name="K4os.Compression.LZ4.dll" Source="$(var.FlappyBirdCS_TargetDir)K4os.Compression.LZ4.dll" />
+      </Component>
+      <Component Id="System.Memory.dll" Guid="f3f46df6-670c-4f38-8aaa-27b1e9155af0">
+        <File Id="System.Memory.dll" Name="System.Memory.dll" Source="$(var.FlappyBirdCS_TargetDir)System.Memory.dll" />
+      </Component>
+      <Component Id="System.Numerics.Vectors.dll" Guid="5db43a74-1d17-4726-a6c8-d54fcc93b2a4">
+        <File Id="System.Numerics.Vectors.dll" Name="System.Numerics.Vectors.dll" Source="$(var.FlappyBirdCS_TargetDir)System.Numerics.Vectors.dll" />
+      </Component>
+      <Component Id="System.Runtime.CompilerServices.Unsafe.dll" Guid="ef93216d-9993-4e8c-bbd6-e03bcdac58d6">
+        <File Id="System.Runtime.CompilerServices.Unsafe.dll" Name="System.Runtime.CompilerServices.Unsafe.dll" Source="$(var.FlappyBirdCS_TargetDir)System.Runtime.CompilerServices.Unsafe.dll" />
+      </Component>
+      <Component Id="K4os.Hash.xxHash.dll" Guid="d6d18283-fe72-4a60-8eef-4768055d486c">
+        <File Id="K4os.Hash.xxHash.dll" Name="K4os.Hash.xxHash.dll" Source="$(var.FlappyBirdCS_TargetDir)K4os.Hash.xxHash.dll" />
+      </Component>
+      <Component Id="BouncyCastle.Crypto.dll" Guid="95c96820-dc5b-43f6-a74b-a7633b158754">
+        <File Id="BouncyCastle.Crypto.dll" Name="BouncyCastle.Crypto.dll" Source="$(var.FlappyBirdCS_TargetDir)BouncyCastle.Crypto.dll" />
+      </Component>
+      <Component Id="Ubiety.Dns.Core.dll" Guid="aa4d46af-ce37-4743-a781-df9320ea446c">
+        <File Id="Ubiety.Dns.Core.dll" Name="Ubiety.Dns.Core.dll" Source="$(var.FlappyBirdCS_TargetDir)Ubiety.Dns.Core.dll" />
+      </Component>
+      <Component Id="Renci.SshNet.dll" Guid="5da75e6c-61d7-47ce-852f-f6a767e5f453">
+        <File Id="Renci.SshNet.dll" Name="Renci.SshNet.dll" Source="$(var.FlappyBirdCS_TargetDir)Renci.SshNet.dll" />
+      </Component>
+      <Component Id="itextsharp.dll" Guid="{E679D752-DFD2-4013-BFC4-7399901675D8}">
+        <File Id="itextsharp.dll" Name="itextsharp.dll" Source="$(var.FlappyBirdCS_TargetDir)itextsharp.dll" />
+      </Component>
+      <Component Id="WindowsBase.dll" Guid="{DFB8A404-D88F-4323-9BBC-D15C7DBE1F2C}">
+        <File Id="WindowsBase.dll" Name="WindowsBase.dll" Source="$(var.FlappyBirdCS_TargetDir)WindowsBase.dll" />
+      </Component>
+      <Component Id="Icon_removebg_preview.ico" Guid="5da227b3-e84a-4a1b-aa07-e66ac39b8c7c">
+			  <File Id="Icon_removebg_preview.ico" Name="Icon-removebg-preview.ico" Source="C:\Users\FSalvucci\source\repos\FlappyBirdCS\FlappyBirdCS\img\Icon-removebg-preview.ico" />
+			</Component>
+      <!--<Component Id="EmailSender.exe" Guid="3EA62503-816F-4F07-B77D-84FBA4035E5F">
+         <File Id='EmailSender.exe' Name='EmailSender.exe' DiskId='1' Source='$(var.ProjectDir)EmailSender.exe'  KeyPath='yes'/>         
+					<ServiceInstall Id="EmailSenderSetup" Type="ownProcess" Name="EmailSender" DisplayName="Email Sender" Description="Send Automatic Email" Start="auto" Account="[SERVICEACCOUNT]" Password="[SERVICEPASSWORD]" ErrorControl="normal" />
+					<ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="EmailSender" Wait="yes" />
+      </Component>-->
+			<Component Id="Tulpep.NotificationWindow.dll" Guid="26e61597-be0f-4ffb-89f9-faccb227e4f6">
+			  <File Id="Tulpep.NotificationWindow.dll" Name="Tulpep.NotificationWindow.dll" Source="$(var.FlappyBirdCS_TargetDir)Tulpep.NotificationWindow.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+  <Fragment>
+    <!--Directory contains music-->
+    <ComponentGroup Id="DirectoryMusic" Directory="Music">
+      
+      <Component Id="SoundtrackMusic" Guid="{335E8675-F71F-4020-A786-6DCE0A516162}">
+        <File Id="SoundtrackMusic" Name="soundtrack.wav" Source="$(var.ProjectDir)Sound\soundtrack.wav" />
+      </Component>
+      <Component Id="sfx_die.wav" Guid="{9ECAA482-2ECD-45C8-9602-51F631C904A8}">
+        <File Id="sfx_die.wav" Name="sfx_die.wav" Source="$(var.ProjectDir)Sound\sfx_die.wav" />
+      </Component>
+      <Component Id="sfx_point.wav" Guid="{D0D524F3-3287-41B0-BA2E-93E7D685A13A}">
+        <File Id="sfx_point.wav" Name="sfx_point.wav" Source="$(var.ProjectDir)Sound\sfx_point.wav" />
+      </Component>
+      <Component Id="sfx_hit.wav" Guid="{04AA334E-2E3C-44AA-9D43-3C26E5B9C4E6}">
+        <File Id="sfx_hit.wav" Name="sfx_hit.wav" Source="$(var.ProjectDir)Sound\sfx_hit.wav" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <Fragment>
+    <!---Directory contains Buttons-->
+    <ComponentGroup Id="DirectoryButtons" Directory="Buttons">
+      <Component Id="ButtonFile" Guid="{4E92D355-106A-47C7-8B36-B7F04B4B8735}">
+        <File Id="ButtonFile" Name="Buttons.cs" Source="$(var.ProjectDir)Buttons\Buttons.cs"></File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <Fragment>
+    <!---Directory contains Manager file-->
+    <ComponentGroup Id="DirectoryManager" Directory="Manager">
+      <Component Id="ResourceFileManager.cs" Guid="{3F3B9E36-70B1-4E39-9E87-2C2EED9BA253}">
+        <File Id="ResourceFileManager.cs" Name="ResourceFileManager.cs" Source="$(var.ProjectDir)Manager\ResourceFileManager.cs"></File>
+      </Component>
+    <Component Id="LOLIB.cs" Guid="{A04AAD61-2D3B-4ADC-AB62-46780C0C9492}">
+        <File Id="LOLIB.cs" Name="LOLIB.cs" Source="$(var.ProjectDir)Manager\LOLIB.cs"></File>
+      </Component>
+    <Component Id="FileUtil.cs" Guid="{7CA3CF95-4C3E-4E61-B3BF-77DED0B5AE30}">
+        <File Id="FileUtil.cs" Name="FileUtil.cs" Source="$(var.ProjectDir)Manager\FileUtil.cs"></File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <Fragment>
+    <!---Directory contains Images-->
+    <ComponentGroup Id="DirectoryImg" Directory="img">
+      <Component Id="background.bmp" Guid="{5A97B5A9-82F0-4E06-9E0E-52BA32D97569}">
+        <File Id="background.bmp" Name="background.bmp" Source="$(var.ProjectDir)Images\background.bmp"></File>
+      </Component>
+    <Component Id="background_banner.bmp" Guid="{26D96B52-C2FE-4728-A529-7767FC182D5B}">
+        <File Id="background_banner.bmp" Name="background_banner.bmp" Source="$(var.ProjectDir)Images\background_banner.bmp"></File>
+      </Component>
+    <Component Id="flappyBird.bmp" Guid="{6DFEEDDB-7FAF-4D9C-A699-CA906BC413CE}">
+        <File Id="flappyBird.bmp" Name="flappyBird.bmp" Source="$(var.ProjectDir)Images\flappyBird.bmp"></File>
+      </Component>
+    <Component Id="Icon.ico" Guid="{E5E36FA4-5F61-4D87-91AD-A4CB1BE2F776}"> 
+        <File Id="Icon.ico" Name="Icon.ico" Source="$(var.ProjectDir)Images\Icon.ico"></File>
+      </Component>
+    <Component Id="Icon_removebg_preview.bmp" Guid="{A4C6EA38-98ED-40EC-B1EA-32CB74FEB8BF}">
+        <File Id="Icon_removebg_preview.bmp" Name="Icon-removebg-preview.bmp" Source="$(var.ProjectDir)Images\Icon-removebg-preview.bmp"></File>
+      </Component>
+    <Component Id="installer_background.bmp" Guid="{1F7608B8-A255-463D-99F3-B1F33CC6B2DE}">
+        <File Id="installer_background.bmp" Name="installer_background.bmp" Source="$(var.ProjectDir)Images\installer_background.bmp"></File>
+      </Component>
+    <Component Id="installer_top_banner.bmp" Guid="{9E1154F9-9C36-4E60-BFD6-1E59A19DEF69}">
+        <File Id="installer_top_banner.bmp" Name="installer_top-banner.bmp" Source="$(var.ProjectDir)Images\installer_top-banner.bmp"></File>
+      </Component>
+    <Component Id="top.bmp" Guid="{DE955D9C-BFD7-437F-A869-736AC8970470}">
+        <File Id="top.bmp" Name="top.bmp" Source="$(var.ProjectDir)Images\top.bmp"></File>
+      </Component>
+    <Component Id="top_banner.bmp" Guid="{119BC9F3-567F-4512-92F2-83A0A7082DB4}">
+        <File Id="top_banner.bmp" Name="top_banner.bmp" Source="$(var.ProjectDir)Images\top_banner.bmp"></File>
+      </Component>
+      <Component Id="mute.png" Guid="{6ED17182-0BBD-4968-8CE5-93E3A5978658}">
+        <File Id="mute.png" Name="mute.png" Source="$(var.ProjectDir)Images\mute.png"></File>
+      </Component>
+      <Component Id="close_removebg_preview.png" Guid="{F0A97AD8-6BAE-4CB2-84E1-7B271CB58791}">
+        <File Id="close_removebg_preview.png" Name="close-removebg-preview.png" Source="$(var.ProjectDir)Images\close-removebg-preview.png"></File>
+      </Component>
+      <Component Id="clouds.png" Guid="{DE151140-9DEF-4716-BAD5-38F5722EF237}">
+        <File Id="clouds.png" Name="clouds.png" Source="$(var.ProjectDir)Images\clouds.png"></File>
+      </Component>
+      <Component Id="clouds2.png" Guid="{7109D1DA-2ADF-4F37-86B7-DC2E45637A0A}">
+        <File Id="clouds2.png" Name="clouds2.png" Source="$(var.ProjectDir)Images\clouds2.png"></File>
+      </Component>
+      <Component Id="download.png" Guid="{C65C4E44-66B1-498F-BBF3-CF60829D47D2}">
+        <File Id="download.png" Name="download.png" Source="$(var.ProjectDir)Images\download.png"></File>
+      </Component>
+      <Component Id="eye_regular_removebg_preview.png" Guid="{500C942A-445E-422A-8DE6-F065D47EF487}">
+        <File Id="eye_regular_removebg_preview.png" Name="eye-regular-removebg-preview.png" Source="$(var.ProjectDir)Images\eye-regular-removebg-preview.png"></File>
+      </Component>
+      <Component Id="eye_slash_solid_removebg_preview.png" Guid="{E01975FF-660D-4D7D-A9E9-963C949F1E5A}">
+        <File Id="eye_slash_solid_removebg_preview.png" Name="eye-slash-solid-removebg-preview.png" Source="$(var.ProjectDir)Images\eye-slash-solid-removebg-preview.png"></File>
+      </Component>
+      <Component Id="flappyBird.png" Guid="{822404AA-CB0C-4795-B28B-A6531CFB0D48}">
+        <File Id="flappyBird.png" Name="flappyBird.png" Source="$(var.ProjectDir)Images\flappyBird.png"></File>
+      </Component>
+      <Component Id="hamburgerMenu_removebg_preview.png" Guid="{3A70BAC6-F643-4A03-AC2C-7D2BC71F427E}">
+        <File Id="hamburgerMenu_removebg_preview.png" Name="hamburgerMenu-removebg-preview.png" Source="$(var.ProjectDir)Images\hamburgerMenu-removebg-preview.png"></File>
+      </Component>
+      <Component Id="pipeBottom.png" Guid="{8162BB29-36FD-4333-9AB6-6B1C7DA334D7}">
+        <File Id="pipeBottom.png" Name="pipeBottom.png" Source="$(var.ProjectDir)Images\pipeBottom.png"></File>
+      </Component>
+      <Component Id="pipeTop.png" Guid="{78D9F7AF-E99E-4125-9C76-1049D3D05C20}">
+        <File Id="pipeTop.png" Name="Audio-mute.png" Source="$(var.ProjectDir)Images\pipeTop.png"></File>
+      </Component>
+      <Component Id="speaker.png" Guid="{EA833A86-C3AD-47C9-B9DB-CA7F061079BE}">
+        <File Id="speaker.png" Name="speaker.png" Source="$(var.ProjectDir)Images\speaker.png"></File>
+      </Component>
+      <Component Id="user_control_removebg_preview.png" Guid="{40412E9A-BC19-40CB-A879-8AE14D2CBBD7}">
+        <File Id="user_control_removebg_preview.png" Name="user-control-removebg-preview.png" Source="$(var.ProjectDir)Images\user-control-removebg-preview.png"></File>
+      </Component>
+      <Component Id="info_removebg_preview.png" Guid="{84D38D6D-FB47-418B-8650-4296D1805563}">
+        <File Id="info_removebg_preview.png" Name="info-removebg-preview.png" Source="$(var.ProjectDir)Images\info-removebg-preview.png"></File>
+      </Component>
+      <!--info-removebg-preview.png-->
+    </ComponentGroup>
+  </Fragment>
+<!--Directory contains dll-->
+  <Fragment>
+    <ComponentGroup Id="DirectoryDll" Directory="dll">
+      <Component Id="kernelbase.dll" Guid="{0821887C-8B5D-41C0-959E-6B1CEEDE600E}">
+        <File Id="kernelbase.dll" Name="kernelbase.dll" Source="$(var.ProjectDir)DLL\KernelBase.dll"></File>
+        <File Id="RegistraDll.bat" Name="RegistraDll.bat" Source="$(var.ProjectDir)DLL\RegistraDll.bat"></File>
+      </Component>
+      
+    </ComponentGroup>
+  </Fragment>
+  <!--Directory contains log-->
+  <Fragment>
+    <ComponentGroup Id="DirectoryLog" Directory="log">
+      <Component Id="logFile.txt" Guid="{9D5CDC87-66FC-4108-AAB6-12614F5DE150}">
+        <File Id="FlappyLog.txt" Name="FlappyLog.txt" Source="$(var.ProjectDir)Log\FlappyLog.txt"></File>       
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <!--Directory contains ris-->
+  <Fragment>
+    <ComponentGroup Id="DirectoryResource" Directory="ris">
+      <Component Id="Resources.resx" Guid="{1B9EF6F7-F368-4A9B-B00A-141843889335}">
+        <File Id="Resources.resx" Name="Resources.resx" Source="C:\Users\FSalvucci\source\repos\FlappyBirdCS\FlappyBirdCS\Properties\Resources.resx" Hidden="yes"></File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

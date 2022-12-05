@@ -1,0 +1,3 @@
+Data Source=MyOracleDB;User Id=myUsername;Password=myPassword;Integrated Security=no;
+
+Connection string to use in c#

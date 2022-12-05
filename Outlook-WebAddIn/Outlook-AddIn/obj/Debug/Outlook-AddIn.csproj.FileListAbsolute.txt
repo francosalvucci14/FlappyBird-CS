@@ -1,0 +1,2 @@
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\Outlook-AddIn\Outlook-AddIn\obj\Debug\Outlook-AddIn.csprojAssemblyReference.cache
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\Outlook-AddIn\Outlook-AddIn\obj\Debug\Outlook-AddIn.csproj.CoreCompileInputs.cache

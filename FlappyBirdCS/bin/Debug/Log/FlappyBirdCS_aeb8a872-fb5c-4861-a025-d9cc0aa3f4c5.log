@@ -1,0 +1,5 @@
+ ERROR :      |W10P-N4418|2020/10/26 16:31:26.195| FlappyBirdCS.Form3.soundTrackGame | Error | Error=Verificare che nel percorso specificato sia presente un file audio.
+ ERROR :      |W10P-N4418|2020/10/26 16:31:26.211| FlappyBirdCS.Form3.soundTrackGame |    in System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   in System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   in System.Media.SoundPlayer.PlayLooping()
+   in FlappyBirdCS.Form3.soundTrackGame() in C:\Users\FSalvucci\source\repos\FlappyBirdCS\FlappyBirdCS\Form3.cs:riga 58

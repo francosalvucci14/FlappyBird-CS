@@ -1,0 +1,8 @@
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\SetupProject\bin\Release\Flappy-Bird_Setup.msi
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\SetupProject\bin\Release\Flappy-Bird_Setup.wixpdb
+obj\Release\Product.wixobj
+obj\Release\SetupProject.wixproj.BindContentsFileListnull.txt
+obj\Release\SetupProject.wixproj.BindOutputsFileListnull.txt
+obj\Release\SetupProject.wixproj.BindBuiltOutputsFileListnull.txt
+obj\Release\CustomInstallDirDlg.wixobj
+obj\Release\WixUI_InstallDir.wixobj

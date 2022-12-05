@@ -1,0 +1,2 @@
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\SetupProject\bin\Debug\Flappy-Bird_Setup.msi
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\SetupProject\bin\Debug\Flappy-Bird_Setup.wixpdb

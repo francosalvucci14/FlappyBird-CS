@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Created:ce44715c-8c4e-446b-879c-ea9ebe0f09c8-->
+<OfficeApp 
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
+          xsi:type="MailApp">
+
+  <!-- Inizio Impostazioni di base: metadati del componente aggiuntivo, usati per tutte le versioni di Office a meno che non venga specificato un override. -->
+
+  <!-- IMPORTANTE: l'ID deve essere univoco per il componente aggiuntivo. Se si riutilizza questo manifesto, assicurarsi di cambiare l'ID specificando un nuovo GUID. -->
+  <Id>e1b0ff44-d4e2-4732-a0ee-e2fed232a2f3</Id>
+
+  <!--Versione. Gli aggiornamenti dallo Store vengono attivati solo in caso di modifica della versione. -->
+  <Version>1.0.0.0</Version>
+  <ProviderName>Salvucci Franco</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- Nome visualizzato del componente aggiuntivo. Viene usato nello Store e in altri punti dell'interfaccia utente di Office, come la finestra di dialogo dei componenti aggiuntivi. -->
+  <DisplayName DefaultValue="Outlook-AddIn" />
+  <Description DefaultValue="Outlook-AddIn"/>
+  <IconUrl DefaultValue="~remoteAppUrl/Images/icon64.png"/>
+
+  <SupportUrl DefaultValue="http://www.contoso.com" />
+  <!-- Domini che saranno consentiti durante gli spostamenti. Se ad esempio si usa ShowTaskpane ed è presente un collegamento href, gli spostamenti saranno consentiti solo se il dominio è incluso nell'elenco. -->
+  <AppDomains>
+    <AppDomain>AppDomain1</AppDomain>
+    <AppDomain>AppDomain2</AppDomain>
+    <AppDomain>AppDomain3</AppDomain>
+  </AppDomains>
+  <!--Fine Impostazioni di base. -->
+  
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1" />
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="~remoteAppUrl/MessageRead.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.3">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+
+        <DesktopFormFactor>
+          <!-- Posizione delle funzioni attivabili dai pulsanti senza interfaccia utente (azioni di ExecuteFunction). -->
+          <FunctionFile resid="functionFile" />
+
+          <!-- Messaggio letto -->
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <!-- Usare la scheda predefinita del punto di estensione oppure crearne una personalizzata con <CustomTab id="myTab"> -->
+            <OfficeTab id="TabDefault">
+              <!-- Fino a sei gruppi aggiunti per scheda -->
+              <Group id="msgReadGroup">
+                <Label resid="groupLabel" />
+                <!-- Avvia il componente aggiuntivo: pulsante del riquadro attività -->
+                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                  <Label resid="paneReadButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneReadSuperTipTitle" />
+                    <Description resid="paneReadSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="messageReadTaskPaneUrl" />
+                  </Action>
+                </Control>
+                <!-- Per informazioni su come aggiungere altri controlli ExecuteFunction e Menu, vedere http://aka.ms/ButtonCommands -->
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+          <!-- Per informazioni su come aggiungere altri punti di estensione MessageRead, AppointmentOrganizer, AppointmentAttendee, vedere http://aka.ms/ExtensionPointsCommands -->
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon16" DefaultValue="~remoteAppUrl/Images/icon16.png"/>
+        <bt:Image id="icon32" DefaultValue="~remoteAppUrl/Images/icon32.png"/>
+        <bt:Image id="icon80" DefaultValue="~remoteAppUrl/Images/icon80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="functionFile" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html"/>
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="~remoteAppUrl/MessageRead.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+        <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Display all properties"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="Get all properties"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties. This is an example of a button that opens a task pane."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

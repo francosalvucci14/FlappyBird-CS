@@ -1,0 +1,51 @@
+ ERROR :      |W10P-N4418|2020/09/21 16:48:43.301| FlappyBirdCS.RecordTable.showData | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/09/21 16:48:43.311| FlappyBirdCS.RecordTable.showData |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in FlappyBirdCS.RecordTable.showData()
+ INFORMATION: |W10P-N4418|2020/09/21 16:48:43.340| FlappyBirdCS.Form3.buttons5_Click | Apro form per tabella dei record
+ INFORMATION: |W10P-N4418|2020/09/21 16:48:46.135| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/21 16:48:46.899| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:48:46.903| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ ERROR :      |W10P-N4418|2020/09/21 16:48:50.387| FlappyBirdCS.Form4.buttons1_Click | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/09/21 16:48:50.390| FlappyBirdCS.Form4.buttons1_Click |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in FlappyBirdCS.Form4.buttons1_Click(Object sender, EventArgs e)
+ INFORMATION: |W10P-N4418|2020/09/21 16:48:52.921| FlappyBirdCS.Form3.pictureBox9_Click | Apro menu
+ INFORMATION: |W10P-N4418|2020/09/21 16:48:53.510| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:01.702| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:05.712| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:05.715| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:05.923| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:06.947| FlappyBirdCS.Form3.pictureBox9_Click | Apro menu
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:07.483| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:07.535| FlappyBirdCS.ManagerUser.load | Load User Data
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:07.563| FlappyBirdCS.Form3.pictureBox8_Click | Apro manager user
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:09.089| FlappyBirdCS.ManagerUser.showData | Load All User
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:14.783| FlappyBirdCS.UserControl.loadUserData | Load User data
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:14.815| FlappyBirdCS.ManagerUser.buttons4_Click | Show User Control
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:29.090| FlappyBirdCS.UserControl.buttons2_Click | Modification made successfully
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:31.774| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:38.247| FlappyBirdCS.Form4.changePass | Nascondi password
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:38.984| FlappyBirdCS.Form4.changePass | Mostra password
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:42.560| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:42.563| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:42.598| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:44.447| FlappyBirdCS.Form3.buttons1_Click | Apro form 1 per iniziare il gioco
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:56.003| FlappyBirdCS.Form1.endGame | Game Over
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:57.243| FlappyBirdCS.Form1.mexRecord | Update Record
+ INFORMATION: |W10P-N4418|2020/09/21 16:49:59.546| FlappyBirdCS.Form1.mexRetryYN | Restart

@@ -1,0 +1,16 @@
+ INFORMATION: |W10P-N4418|2020/09/24 10:45:05.697| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/09/24 10:45:06.098| FlappyBirdCS.Form3.muteAudio | Muto l'audio
+ INFORMATION: |W10P-N4418|2020/09/24 10:45:06.460| FlappyBirdCS.Form3.unMuteAudio | Riattivo l'audio
+ INFORMATION: |W10P-N4418|2020/09/24 10:45:06.905| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ ERROR :      |W10P-N4418|2020/09/24 10:45:09.105| FlappyBirdCS.Form3.pictureBox8_Click | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/09/24 10:45:09.105| FlappyBirdCS.Form3.pictureBox8_Click |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in FlappyBirdCS.Form3.pictureBox8_Click(Object sender, EventArgs e)
+ INFORMATION: |W10P-N4418|2020/09/24 10:45:10.975| FlappyBirdCS.Form3.muteAudio | Muto l'audio
+ INFORMATION: |W10P-N4418|2020/09/24 10:45:11.541| FlappyBirdCS.Form3.pictureBox9_Click | Apro menu

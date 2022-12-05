@@ -1,0 +1,14 @@
+ INFORMATION: |W10P-N4418|2020/09/21 16:50:02.266| FlappyBirdCS.RecordTable.showData | Show All User 
+ INFORMATION: |W10P-N4418|2020/09/21 16:50:02.322| FlappyBirdCS.Form3.buttons5_Click | Apro form per tabella dei record
+ INFORMATION: |W10P-N4418|2020/09/21 16:50:08.606| FlappyBirdCS.Form3.buttons3_Click | Apro form web
+ INFORMATION: |W10P-N4418|2020/09/21 16:50:54.363| FlappyBirdCS.Form3.pictureBox9_Click | Apro menu
+ INFORMATION: |W10P-N4418|2020/09/21 16:50:55.387| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ ERROR :      |W10P-N4418|2020/09/21 16:50:56.876| FlappyBirdCS.Form3.pictureBox8_Click | Errore : Nessun privilegio admin
+ INFORMATION: |W10P-N4418|2020/09/21 16:50:58.291| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:05.026| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:05.031| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:05.090| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:05.815| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:05.885| FlappyBirdCS.ManagerUser.load | Load User Data
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:05.919| FlappyBirdCS.Form3.pictureBox8_Click | Apro manager user
+ INFORMATION: |W10P-N4418|2020/09/21 16:51:10.448| FlappyBirdCS.Form3.buttons2_Click | Esco dal gioco

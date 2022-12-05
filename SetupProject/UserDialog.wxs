@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<!-- TODO: Put your code here. -->
+    <UI Id="UserDialogUI">
+
+      <Property Id="Proceed">proceedbtn</Property>
+      <!--<Binary Id="proceedbtn" SourceFile="images/proceedbtn.bmp"/>
+      <Binary Id="headerPic" SourceFile="images/header.bmp"/>-->
+
+      <Dialog Id="UserDialog" Width="400" Height="300" Title="Registration of Database Server">
+
+        <!--<Control Id="background" Type="Bitmap" Text="bgPic" Height="300" Width="400" X="0" Y="0" TabSkip="no" />
+        <Control Id="header" Type="Bitmap" Text="headerPic" Height="50" Width="400" X="0" Y="0" TabSkip="no" />-->
+        <Control Id="headerText"  Type="Text" X="65" Y="10" Width="350" Height="40" Transparent="yes" Text="{TahomaBig}Server Database" />
+
+
+        <Control Id="nameLabel" Type="Text" X="85" Y="120" Height="17" Width="65" Transparent="yes" Text="{TahomaNormal}IP of Database Server:" />
+        <Control Id="nameTextbox" Type="Edit" X="150" Y="117"  Height="17" Width="120" Property="FULLNAMEProperty"  />
+
+        <Control Id="proceedButton" Type="PushButton" Text="[Proceed]" Height="62" Width="222" X="90" Y="180" Bitmap="yes">
+          <Publish Event="DoAction" Value="RegistrationInfoCustomAction">1</Publish>
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+
+        <Control Id="cancelButton" Type="PushButton" Text="[Cancel]" Height="40" Width="144" X="135" Y="245" Cancel="yes" Bitmap="yes">
+          <Publish Event="EndDialog" Value="Exit" />
+        </Control>
+
+      </Dialog>
+
+    </UI>
+
+    <InstallUISequence>
+      <Show Dialog="UserDialog" Before="CustomInstallDirDlg" />
+    </InstallUISequence>
+
+  </Fragment>
+  <Fragment>
+    <Binary Id="CustomActionBinary" SourceFile="$(var.FlappyBirdCS.TargetDir)$(var.FlappyBirdCS.TargetName).CA.dll"/>
+    <CustomAction Id="RegistrationInfoCustomAction" BinaryKey="CustomActionBinary" DllEntry="SaveUserInfo"  />
+  </Fragment>
+</Wix>

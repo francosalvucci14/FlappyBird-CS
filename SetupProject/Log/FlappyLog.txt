@@ -1,0 +1,3 @@
+---FlappyLog---
+
+the application logs will be placed in the folder of the user who starts the application{%userprofile%}, with two separate folders for information and for errors

@@ -1,0 +1,9 @@
+obj\Debug\Product.wixobj
+obj\Debug\SetupProject.wixproj.BindContentsFileListnull.txt
+obj\Debug\SetupProject.wixproj.BindOutputsFileListnull.txt
+obj\Debug\SetupProject.wixproj.BindBuiltOutputsFileListnull.txt
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\SetupProject\bin\Debug\Flappy-Bird_Setup.msi
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\SetupProject\bin\Debug\Flappy-Bird_Setup.wixpdb
+obj\Debug\CustomInstallDirDlg.wixobj
+obj\Debug\WixUI_InstallDir.wixobj
+obj\Debug\UserDialog.wixobj

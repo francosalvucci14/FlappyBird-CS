@@ -1,0 +1,10 @@
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:40.469| FlappyBirdCS.RecordTable.showData | Show All User 
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:40.485| FlappyBirdCS.Form3.buttons5_Click | Apro form per tabella dei record
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:45.101| FlappyBirdCS.Form3.buttons3_Click | Apro form web
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:48.832| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:49.587| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ ERROR :      |W10P-N4418|2020/10/12 15:47:50.344| FlappyBirdCS.Form3.pictureBox8_Click | Errore : Nessun privilegio admin
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:51.105| FlappyBirdCS.Form3.muteAudio | Muto l'audio
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:51.690| FlappyBirdCS.Form3.unMuteAudio | Riattivo l'audio
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:53.498| FlappyBirdCS.Form3.buttons4_Click | Apro form per registrazione
+ INFORMATION: |W10P-N4418|2020/10/12 15:47:55.595| FlappyBirdCS.Form3.buttons2_Click | Esco dal gioco

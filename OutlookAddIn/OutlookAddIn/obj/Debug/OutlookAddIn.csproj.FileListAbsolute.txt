@@ -1,0 +1,13 @@
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\bin\Debug\OutlookAddIn.dll
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\bin\Debug\OutlookAddIn.pdb
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\bin\Debug\OutlookAddIn.dll.manifest
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\bin\Debug\OutlookAddIn.vsto
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.csprojAssemblyReference.cache
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.Properties.Resources.resources
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.csproj.GenerateResource.cache
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.csproj.CoreCompileInputs.cache
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.csproj.CopyComplete
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.dll
+C:\Users\FSalvucci\source\repos\FlappyBirdCS\OutlookAddIn\OutlookAddIn\obj\Debug\OutlookAddIn.pdb

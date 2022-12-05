@@ -1,0 +1,13 @@
+ INFORMATION: |W10P-N4418|2020/09/23 11:53:15.639| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/09/23 11:53:16.725| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ ERROR :      |W10P-N4418|2020/09/23 11:53:18.815| FlappyBirdCS.Form3.pictureBox8_Click | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/09/23 11:53:18.824| FlappyBirdCS.Form3.pictureBox8_Click |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in FlappyBirdCS.Form3.pictureBox8_Click(Object sender, EventArgs e)
+ INFORMATION: |W10P-N4418|2020/09/23 11:53:20.455| FlappyBirdCS.Form3.buttons2_Click | Esco dal gioco

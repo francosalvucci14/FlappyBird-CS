@@ -1,0 +1,13 @@
+ ERROR :      |W10P-N4418|2020/09/18 14:07:46.281| FlappyBirdCS.RecordTable.showData | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/09/18 14:07:46.290| FlappyBirdCS.RecordTable.showData |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in FlappyBirdCS.RecordTable.showData()
+ INFORMATION: |W10P-N4418|2020/09/18 14:07:46.308| FlappyBirdCS.Form3.buttons5_Click | Apro form per tabella dei record
+ INFORMATION: |W10P-N4418|2020/09/18 14:07:49.075| FlappyBirdCS.Form3.pictureBox9_Click | Apro menu
+ INFORMATION: |W10P-N4418|2020/09/18 14:07:49.635| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control

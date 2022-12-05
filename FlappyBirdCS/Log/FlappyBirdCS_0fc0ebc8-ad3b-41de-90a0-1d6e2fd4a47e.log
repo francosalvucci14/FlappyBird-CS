@@ -1,0 +1,14 @@
+ INFORMATION: |W10P-N4418|2020/10/12 17:35:53.633| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:01.950| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:01.974| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:02.137| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:03.011| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:03.622| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:03.700| FlappyBirdCS.ManagerUser.load | Load User Data
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:03.737| FlappyBirdCS.Form3.pictureBox8_Click | Apro manager user
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:05.890| FlappyBirdCS.ManagerUser.showData | Load All User
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:21.004| FlappyBirdCS.UserControl.loadUserData | Load User data
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:21.043| FlappyBirdCS.ManagerUser.buttons4_Click | Show User Control
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:24.538| FlappyBirdCS.UserControl.buttons2_Click | Modification made successfully
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:25.333| FlappyBirdCS.UserControl.buttons2_Click | Modification made successfully
+ INFORMATION: |W10P-N4418|2020/10/12 17:36:28.307| FlappyBirdCS.Form3.buttons2_Click | Esco dal gioco

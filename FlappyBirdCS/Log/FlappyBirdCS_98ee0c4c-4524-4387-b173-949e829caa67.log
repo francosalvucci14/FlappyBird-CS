@@ -1,0 +1,17 @@
+ INFORMATION: |W10P-N4418|2020/09/25 15:27:54.900| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/09/25 15:27:56.010| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/09/25 15:27:56.010| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ ERROR :      |W10P-N4418|2020/09/25 15:27:59.735| FlappyBirdCS.Form4.buttons1_Click | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/09/25 15:27:59.740| FlappyBirdCS.Form4.buttons1_Click |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in FlappyBirdCS.Form4.buttons1_Click(Object sender, EventArgs e) in C:\Users\FSalvucci\source\repos\FlappyBirdCS\FlappyBirdCS\Form4.cs:riga 56
+ INFORMATION: |W10P-N4418|2020/09/25 15:28:01.670| FlappyBirdCS.Form3.buttons2_Click | Esco dal gioco

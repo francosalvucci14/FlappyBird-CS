@@ -1,0 +1,37 @@
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:21.207| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:25.427| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:25.430| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ ERROR :      |W10P-N4418|2020/10/16 09:01:29.477| FlappyBirdCS.Form4.buttons1_Click | Error | Error=Unable to connect to any of the specified MySQL hosts.
+ ERROR :      |W10P-N4418|2020/10/16 09:01:29.477| FlappyBirdCS.Form4.buttons1_Click |    in MySql.Data.MySqlClient.NativeDriver.Open()
+   in MySql.Data.MySqlClient.Driver.Open()
+   in MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   in MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   in MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   in MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   in MySql.Data.MySqlClient.MySqlConnection.Open()
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in FlappyBirdCS.Form4.buttons1_Click(Object sender, EventArgs e) in C:\Users\FSalvucci\source\repos\FlappyBirdCS\FlappyBirdCS\Form4.cs:riga 56
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:31.737| FlappyBirdCS.Form3.pictureBox9_Click | Chiudo menu
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:32.267| FlappyBirdCS.Form3.muteAudio | Muto l'audio
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:40.250| FlappyBirdCS.Form3.buttons4_Click | Apro form per login
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:44.378| FlappyBirdCS.Form4.buttons1_Click | Controllo l'esistenza dell'utente
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:44.378| FlappyBirdCS.Form4.buttons1_Click | Cerca utente
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:44.468| FlappyBirdCS.Form4.buttons1_Click | Utente trovato
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:45.699| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:45.730| FlappyBirdCS.ManagerUser.load | Load User Data
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:45.745| FlappyBirdCS.Form3.pictureBox8_Click | Apro manager user
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:47.783| FlappyBirdCS.ManagerUser.showData | Load All User
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:55.821| FlappyBirdCS.UserControl.loadUserData | Load User data
+ INFORMATION: |W10P-N4418|2020/10/16 09:01:55.838| FlappyBirdCS.ManagerUser.buttons4_Click | Show User Control
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:05.476| FlappyBirdCS.UserControl.buttons1_Click | Delete successfully
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:07.378| FlappyBirdCS.Form3.pictureBox8_Click | Apro user control
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:07.378| FlappyBirdCS.ManagerUser.load | Load User Data
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:07.394| FlappyBirdCS.Form3.pictureBox8_Click | Apro manager user
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:08.088| FlappyBirdCS.ManagerUser.showData | Load All User
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:20.577| FlappyBirdCS.ManagerUser.buttons3_Click | Close Manager User
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:23.423| FlappyBirdCS.Form3.buttons1_Click | Apro form 1 per iniziare il gioco
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:36.340| FlappyBirdCS.Form1.endGame | Game Over
+ INFORMATION: |W10P-N4418|2020/10/16 09:02:39.145| FlappyBirdCS.Form1.mexRetryYN | Exit Application
