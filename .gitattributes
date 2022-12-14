@@ -2,3 +2,5 @@
 *.css linguist-detectable=false
 *.html linguist-detectable=false
 *.cs linguist-detectable=true
+*.scss linguist-detectable=false
+*.rtf linguist-detectable=false
