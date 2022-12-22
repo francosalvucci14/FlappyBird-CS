@@ -1,2 +1,0 @@
-bin\Debug\OfficeAppManifests\Outlook-AddInManifest.xml
-C:\Users\FSalvucci\source\repos\FlappyBirdCS\Outlook-AddIn\Outlook-AddIn\bin\Debug\Outlook-AddIn.debugapp
